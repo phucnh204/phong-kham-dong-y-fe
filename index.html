@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Phòng khám chuyên nghiệp, đặt lịch dễ dàng, bác sĩ tận tâm."
+    />
+    <title>Phòng Khám Y Khoa</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="font-sans text-gray-800 md:px-20">
+    <!-- Header -->
+    <div id="header" class=""></div>
+
+    <!-- Nav -->
+    <div id="navbar"></div>
+
+    <!-- Banner -->
+    <div id="banner"></div>
+    <!-- Giới thiệu -->
+    <div id="about"></div>
+
+    <!-- Dịch vụ -->
+    <section class="bg-gray-100 p-6">
+      <h2 class="text-center text-2xl font-semibold mb-6">Dịch vụ chính</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold text-xl">Khám tổng quát</h3>
+          <p>Đánh giá toàn diện sức khỏe định kỳ.</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold text-xl">Nhi khoa</h3>
+          <p>Chăm sóc sức khỏe cho trẻ em từ 0-16 tuổi.</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded">
+          <h3 class="font-semibold text-xl">Tiêm chủng</h3>
+          <p>Cung cấp đầy đủ các loại vaccine cần thiết.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đội ngũ bác sĩ -->
+    <section class="p-6">
+      <h2 class="text-2xl text-center font-semibold mb-4">Đội ngũ bác sĩ</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="text-center">
+          <img
+            src="https://placehold.co/300x300"
+            alt="Bác sĩ A"
+            class="w-32 h-32 mx-auto rounded-full object-cover"
+          />
+          <h3 class="mt-2 font-bold">BS. Nguyễn Văn A</h3>
+          <p>Nội tổng quát</p>
+        </div>
+        <div class="text-center">
+          <img
+            src="https://placehold.co/300x300"
+            alt="Bác sĩ B"
+            class="w-32 h-32 mx-auto rounded-full object-cover"
+          />
+          <h3 class="mt-2 font-bold">BS. Trần Thị B</h3>
+          <p>Nhi khoa</p>
+        </div>
+        <div class="text-center">
+          <img
+            src="https://placehold.co/300x300"
+            alt="Bác sĩ C"
+            class="w-32 h-32 mx-auto rounded-full object-cover"
+          />
+          <h3 class="mt-2 font-bold">BS. Lê Văn C</h3>
+          <p>Tiêm chủng</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Đặt lịch hẹn -->
+    <section class="bg-blue-50 p-6 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Đặt lịch hẹn</h2>
+      <form class="max-w-md mx-auto space-y-4" id="booking-form">
+        <input
+          type="text"
+          placeholder="Họ tên"
+          class="w-full border p-2 rounded"
+          required
+        />
+        <input
+          type="tel"
+          placeholder="Số điện thoại"
+          class="w-full border p-2 rounded"
+          required
+        />
+        <input type="date" class="w-full border p-2 rounded" required />
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Gửi lịch hẹn
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 text-center">mo</footer>
+
+    <script src="./js/main.js"></script>
+
+    <script>
+      // inlude header.html
+      fetch("./src/components/header.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("header").innerHTML = html;
+        });
+
+      // inlude navbar.html
+      fetch("./src/components/navbar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar").innerHTML = html;
+        });
+
+      // inlude banner.html
+      fetch("./src/components/banner.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("banner").innerHTML = html;
+        });
+
+      // inlude about.html
+      fetch("./src/components/about.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("about").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

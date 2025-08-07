@@ -8,9 +8,18 @@
       content="Phòng khám chuyên nghiệp, đặt lịch dễ dàng, bác sĩ tận tâm."
     />
     <title>Phòng Khám Y Khoa</title>
+
     <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- <link rel="stylesheet" href="swiper/swiper-bundle.min.css" /> -->
+    <!-- <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
-  <body class="font-sans text-gray-800 md:px-20">
+
+  <body class="font-sans text-gray-800 lg:px-20">
     <!-- Header -->
     <div id="header" class=""></div>
 
@@ -23,88 +32,22 @@
     <div id="about"></div>
 
     <!-- Dịch vụ -->
-    <section class="bg-gray-100 p-6">
-      <h2 class="text-center text-2xl font-semibold mb-6">Dịch vụ chính</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="bg-white p-4 shadow rounded">
-          <h3 class="font-semibold text-xl">Khám tổng quát</h3>
-          <p>Đánh giá toàn diện sức khỏe định kỳ.</p>
-        </div>
-        <div class="bg-white p-4 shadow rounded">
-          <h3 class="font-semibold text-xl">Nhi khoa</h3>
-          <p>Chăm sóc sức khỏe cho trẻ em từ 0-16 tuổi.</p>
-        </div>
-        <div class="bg-white p-4 shadow rounded">
-          <h3 class="font-semibold text-xl">Tiêm chủng</h3>
-          <p>Cung cấp đầy đủ các loại vaccine cần thiết.</p>
-        </div>
-      </div>
-    </section>
+    <div id="service"></div>
 
     <!-- Đội ngũ bác sĩ -->
-    <section class="p-6">
-      <h2 class="text-2xl text-center font-semibold mb-4">Đội ngũ bác sĩ</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="text-center">
-          <img
-            src="https://placehold.co/300x300"
-            alt="Bác sĩ A"
-            class="w-32 h-32 mx-auto rounded-full object-cover"
-          />
-          <h3 class="mt-2 font-bold">BS. Nguyễn Văn A</h3>
-          <p>Nội tổng quát</p>
-        </div>
-        <div class="text-center">
-          <img
-            src="https://placehold.co/300x300"
-            alt="Bác sĩ B"
-            class="w-32 h-32 mx-auto rounded-full object-cover"
-          />
-          <h3 class="mt-2 font-bold">BS. Trần Thị B</h3>
-          <p>Nhi khoa</p>
-        </div>
-        <div class="text-center">
-          <img
-            src="https://placehold.co/300x300"
-            alt="Bác sĩ C"
-            class="w-32 h-32 mx-auto rounded-full object-cover"
-          />
-          <h3 class="mt-2 font-bold">BS. Lê Văn C</h3>
-          <p>Tiêm chủng</p>
-        </div>
-      </div>
-    </section>
+    <div id="card-doctor"></div>
 
-    <!-- Đặt lịch hẹn -->
-    <section class="bg-blue-50 p-6 text-center">
-      <h2 class="text-2xl font-semibold mb-4">Đặt lịch hẹn</h2>
-      <form class="max-w-md mx-auto space-y-4" id="booking-form">
-        <input
-          type="text"
-          placeholder="Họ tên"
-          class="w-full border p-2 rounded"
-          required
-        />
-        <input
-          type="tel"
-          placeholder="Số điện thoại"
-          class="w-full border p-2 rounded"
-          required
-        />
-        <input type="date" class="w-full border p-2 rounded" required />
-        <button
-          type="submit"
-          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Gửi lịch hẹn
-        </button>
-      </form>
-    </section>
+    <!-- Why chosse -->
+    <div id="why-chosse"></div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 text-center">mo</footer>
+    <div id="footer"></div>
 
     <script src="./js/main.js"></script>
+
+    <!-- <script src="./swiper/swiper-bundle.min.js"></script> -->
+    <!-- <script src="./node_modules/swiper/swiper-bundle.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
       // inlude header.html
@@ -126,6 +69,55 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("banner").innerHTML = html;
+
+          const swiper = new Swiper(".swiper-container", {
+            loop: true,
+            autoplay: {
+              delay: 2500,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+              // Khi chiều rộng màn hình nhỏ hơn 768px
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 10, // Giảm khoảng cách giữa các slide
+                height: 250, // Giảm chiều cao slider trên thiết bị nhỏ
+              },
+              // Khi chiều rộng màn hình từ 768px trở lên
+              1024: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+                height: 350, // Điều chỉnh chiều cao slider trên màn hình tablet
+              },
+              // Màn hình máy tính để bàn lớn
+              1280: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                height: 400, // Chiều cao lớn hơn cho màn hình desktop
+              },
+            },
+          });
+        });
+
+      // inlude service.html
+      fetch("./src/components/service.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("service").innerHTML = html;
+        });
+
+      // inlude why-chosse.html
+      fetch("./src/components/why-chosse.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("why-chosse").innerHTML = html;
         });
 
       // inlude about.html
@@ -133,6 +125,20 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("about").innerHTML = html;
+        });
+
+      // inlude doctor.html
+      fetch("./src/components/card-doctor.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("card-doctor").innerHTML = html;
+        });
+
+      // inlude footer.html
+      fetch("./src/components/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
         });
     </script>
   </body>

@@ -40,6 +40,9 @@
     <!-- Why chosse -->
     <div id="why-chosse"></div>
 
+    <!-- Why chosse -->
+    <div id="dat-lich"></div>
+
     <!-- Footer -->
     <div id="footer"></div>
 
@@ -253,6 +256,64 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("card-doctor").innerHTML = html;
+        });
+
+      // inlude dat-lich.html
+      fetch("./src/components/dat-lich.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("dat-lich").innerHTML = html;
+          (function () {
+            const btn = document.getElementById("btn-dang-ky");
+            const popup = document.getElementById("popup");
+            const popupContent = document.getElementById("popup-content");
+            const closeBtn = document.getElementById("close-popup");
+
+            if (!btn || !popup || !popupContent || !closeBtn) return;
+
+            const DAT_LICH_URL = "./src/components/dat-lich.html";
+
+            function openPopup() {
+              popup.classList.remove("hidden");
+              document.body.style.overflow = "hidden";
+              btn.setAttribute("aria-expanded", "true");
+            }
+
+            function closePopup() {
+              popup.classList.add("hidden");
+              document.body.style.overflow = "";
+              btn.setAttribute("aria-expanded", "false");
+            }
+
+            btn.addEventListener("click", async () => {
+              try {
+                popupContent.innerHTML =
+                  '<div class="p-4 text-sm text-gray-500">Đang tải…</div>';
+                const res = await fetch(DAT_LICH_URL, { cache: "no-store" });
+                if (!res.ok) throw new Error("Không tải được dat-lich.html");
+                const html = await res.text();
+                popupContent.innerHTML = html;
+                openPopup();
+              } catch (e) {
+                popupContent.innerHTML = `<div class="p-4 text-red-600">Lỗi tải nội dung: ${e.message}</div>`;
+                openPopup();
+              }
+            });
+
+            closeBtn.addEventListener("click", closePopup);
+
+            // Click nền đen để đóng
+            popup.addEventListener("click", (e) => {
+              // nếu click đúng overlay (nền tối)
+              if (e.target === popup.firstElementChild) closePopup();
+            });
+
+            // ESC để đóng
+            window.addEventListener("keydown", (e) => {
+              if (e.key === "Escape" && !popup.classList.contains("hidden"))
+                closePopup();
+            });
+          })();
         });
 
       // inlude footer.html

@@ -1,25 +1,82 @@
-<!-- Đặt lịch hẹn -->
-<section class="bg-blue-50 p-6 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Đặt lịch hẹn</h2>
-  <form class="max-w-md mx-auto space-y-4" id="booking-form">
-    <input
-      type="text"
-      placeholder="Họ tên"
-      class="w-full border p-2 rounded"
-      required
-    />
-    <input
-      type="tel"
-      placeholder="Số điện thoại"
-      class="w-full border p-2 rounded"
-      required
-    />
-    <input type="date" class="w-full border p-2 rounded" required />
+<!-- Đăng ký tư vấn -->
+<section>
+  <div
+    class="fixed bottom-8 -right-20 md:-right-20 transform -translate-x-1/2 z-50"
+  >
     <button
-      type="submit"
-      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      id="btn-dang-ky"
+      class="bg-[#3FC482] hover:bg-[#35a870] text-white font-semibold rounded-full flex items-center justify-center gap-x-2 px-6 py-3 sm:px-8 sm:py-3.5 w-full transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#35a870] focus:ring-offset-2"
+      type="button"
+      aria-controls="popup"
+      aria-expanded="false"
     >
-      Gửi lịch hẹn
+      <!-- Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-5 w-5 sm:h-6 sm:w-6"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5"
+        />
+      </svg>
+      <!-- Text -->
+      <span>Đăng ký tư vấn</span>
     </button>
-  </form>
+  </div>
 </section>
+
+<!-- Modal: load dat-lich.html vào đây -->
+<div id="popup" class="hidden fixed inset-0 z-[100]">
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- panel -->
+  <div
+    class="relative mx-auto mt-24 w-[95%] max-w-2xl rounded-lg bg-white shadow-xl"
+  >
+    <button
+      id="close-popup"
+      type="button"
+      class="absolute right-3 top-3 text-gray-500 hover:text-red-500 text-2xl leading-none"
+      aria-label="Đóng"
+    >
+      &times;
+    </button>
+
+    <div id="popup-content" class="p-4">
+      <!-- Đặt lịch hẹn -->
+      <section class="bg-blue-50 p-6 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Đặt lịch hẹn</h2>
+        <form class="max-w-md mx-auto space-y-4" id="booking-form">
+          <input
+            type="text"
+            placeholder="Họ tên"
+            class="w-full border p-2 rounded"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Số điện thoại"
+            class="w-full border p-2 rounded"
+            required
+          />
+          <input type="date" class="w-full border p-2 rounded" required />
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Gửi lịch hẹn
+          </button>
+        </form>
+      </section>
+      <div class="text-sm text-gray-500">Đang tải…</div>
+    </div>
+  </div>
+</div>

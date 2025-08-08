@@ -1,5 +1,8 @@
-<nav class="shadow mb-0.5 bg-green-50">
-  <div class="container flex items-center mx-auto px-4 py-3 md:px-8 md:py-4">
+<nav class="shadow mb-0.5 bg-green-50 relative">
+  <div
+    class="container flex items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
+  >
+    <!-- Mobile menu button -->
     <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,115 +23,108 @@
     <!-- Main menu -->
     <ul
       id="menu"
-      class="hidden absolute top-full left-0 w-full bg-green-50 shadow-md md:static md:shadow-none md:flex md:items-center md:space-x-6 md:relative transform transition-transform duration-500"
+      class="fixed top-0 left-0 w-full h-full bg-green-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 pt-16 md:static md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:relative md:transform-none md:translate-x-0 md:w-auto md:h-auto md:pt-0 md:bg-transparent"
     >
-      <li>
-        <a
-          href="#"
-          class="block text-xl font-medium px-4 py-3 text-green-600 hover:text-green-700 hover:bg-green-50 transition-colors duration-200 rounded-md"
-          >Trang chủ</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block text-xl font-medium px-4 py-3 text-green-600 hover:text-green-700 hover:bg-green-50 transition-colors duration-200 rounded-md"
-          >Giới thiệu</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block text-xl font-medium px-4 py-3 text-green-600 hover:text-green-700 hover:bg-green-50 transition-colors duration-200 rounded-md"
-          >Dịch vụ</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block text-xl font-medium px-4 py-3 text-green-600 hover:text-green-700 hover:bg-green-50 transition-colors duration-200 rounded-md"
-          >Đội ngũ</a
-        >
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block text-xl font-medium px-4 py-3 text-green-600 hover:text-green-700 hover:bg-green-50 transition-colors duration-200 rounded-md"
-          >Tin tức</a
-        >
-      </li>
-      <li>
-        <a href="#" class="block text-xl font-medium px-4 py-3 text-green-700"
-          >Liên hệ</a
-        >
-      </li>
-    </ul>
-
-    <div class="flex">
-      <input
-        type="text"
-        placeholder="Tìm kiếm…"
-        class="flex-grow border border-gray-300 rounded-l px-3 py-2 text-sm focus:outline-none"
-      />
+      <!-- Close button for mobile -->
       <button
-        class="md:hidden lg:flex bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-r"
+        id="close-menu"
+        class="absolute top-4 right-4 text-gray-800 md:hidden"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8"
+          fill="none"
           viewBox="0 0 24 24"
-          fill="currentColor"
-          class="size-6"
+          stroke="currentColor"
         >
           <path
-            fill-rule="evenodd"
-            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-            clip-rule="evenodd"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
           />
         </svg>
       </button>
-    </div>
+
+      <li>
+        <a
+          href="#banner"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Trang chủ
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Giới thiệu
+        </a>
+      </li>
+      <li>
+        <a
+          href="#service"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Dịch vụ
+        </a>
+      </li>
+      <li>
+        <a
+          href="#card-doctor"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Đội ngũ
+        </a>
+      </li>
+      <li>
+        <a
+          href="#why-chosse"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Tin tức
+        </a>
+      </li>
+      <li>
+        <a
+          href="#footer"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Liên hệ
+        </a>
+      </li>
+    </ul>
   </div>
+
+  <!-- Search box (mobile only) -->
+  <div class="flex md:hidden px-4 pb-3">
+    <input
+      type="text"
+      placeholder="Tìm kiếm…"
+      class="flex-grow border border-gray-300 rounded-l px-3 py-2 text-sm focus:outline-none"
+    />
+    <button
+      class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-r"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Overlay for mobile menu -->
+  <div
+    id="overlay"
+    class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"
+  ></div>
 </nav>
-
-<!-- <script>
-  // Get the menu button and the menu element
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-
-  // Toggle the menu visibility when the menu button is clicked
-  btn.addEventListener("click", function (event) {
-    console.log("Button clicked!");
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("block");
-    menu.classList.toggle("translate-x-0");
-    menu.classList.toggle("translate-x-full");
-  });
-
-  // Close the menu when clicking outside of it
-  window.addEventListener("click", function (e) {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.add("hidden");
-      menu.classList.remove("block");
-      menu.classList.remove("translate-x-0");
-      menu.classList.add("translate-x-full");
-    }
-  });
-</script>
-
-<style>
-  #menu {
-    transform: translateX(100%); /* Initially off-screen */
-    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
-    z-index: 9999;
-  }
-
-  #menu.block {
-    transform: translateX(0); /* Menu slides in */
-  }
-
-  /* Optionally, you can also customize the look of the menu items */
-  #menu li {
-    list-style: none;
-    padding: 15px;
-  }
-</style> -->

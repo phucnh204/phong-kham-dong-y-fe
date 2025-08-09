@@ -5,10 +5,12 @@
     Dịch Vụ Chữa Bệnh Đông Y
   </h2>
 
-  <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6" id="service-grid">
     <!-- Service 1 -->
     <div
-      class="bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
       <img
         src="../../assets/images/thu-dao-thang.png"
@@ -23,7 +25,9 @@
 
     <!-- Service 2 -->
     <div
-      class="bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
       <img
         src="../../assets/images/ngai-cuu-chua-benh-bluecare.png"
@@ -38,7 +42,9 @@
 
     <!-- Service 3 -->
     <div
-      class="bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
       <img
         src="../../assets/images/cham-soc-mat.png"
@@ -51,6 +57,262 @@
       <p class="text-center">
         Dưỡng da, phục hồi sức khỏe và làm đẹp từ bên trong.
       </p>
+    </div>
+
+    <!-- Service 4 -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/dieu-tri-ho-hap.png"
+        alt="Điều Trị Hô Hấp"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Điều Trị Hô Hấp</h3>
+      <p class="text-center">
+        Chữa các bệnh liên quan đến đường hô hấp như ho, viêm phổi.
+      </p>
+    </div>
+
+    <!-- Service 5 -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/phuc-hoi-suc-khoe.png"
+        alt="Phục Hồi Sức Khỏe"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Phục Hồi Sức Khỏe</h3>
+      <p class="text-center">
+        Hỗ trợ phục hồi sức khỏe sau bệnh tật, tăng cường miễn dịch.
+      </p>
+    </div>
+
+    <!-- Service 6 -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/xoa-bop.png"
+        alt="Xoa Bóp Đông Y"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Xoa Bóp Đông Y</h3>
+      <p class="text-center">
+        Giảm đau, giảm căng thẳng và cải thiện tuần hoàn máu.
+      </p>
+    </div>
+
+    <!-- Service 7 -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/cham-soc-toc.png"
+        alt="Chăm Sóc Tóc Đông Y"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Chăm Sóc Tóc Đông Y</h3>
+      <p class="text-center">
+        Điều trị rụng tóc, phục hồi tóc hư tổn từ thảo dược tự nhiên.
+      </p>
+    </div>
+
+    <!-- Service 8 -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/tri-benh-da-lieu.png"
+        alt="Trị Bệnh Da Liễu"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Trị Bệnh Da Liễu</h3>
+      <p class="text-center">
+        Chữa các bệnh về da như mụn, eczema, viêm da dị ứng.
+      </p>
+    </div>
+
+    <!-- Services 9-15 hidden initially -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/chanh-cam.png"
+        alt="Chánh Cam (Thải Độc)"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Chánh Cam (Thải Độc)</h3>
+      <p class="text-center">
+        Giúp thanh lọc cơ thể, thải độc và cải thiện sức khỏe toàn diện.
+      </p>
+    </div>
+
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/tu-thuoc.png"
+        alt="Tứ Thức Thuốc"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Tứ Thức Thuốc</h3>
+      <p class="text-center">
+        Điều trị các bệnh cơ bản, tăng cường thể trạng và sức đề kháng.
+      </p>
+    </div>
+
+    <!-- Add more hidden services -->
+    <div
+      class="service-item bg-white p-4 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        src="../../assets/images/thuoc-da-liu.png"
+        alt="Thuốc Da Liễu Đông Y"
+        class="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 class="font-semibold text-xl text-center">Thuốc Da Liễu Đông Y</h3>
+      <p class="text-center">
+        Sử dụng thảo dược để điều trị các bệnh ngoài da hiệu quả.
+      </p>
+    </div>
+  </div>
+
+  <!-- Button to show more or hide services -->
+  <div class="text-center mt-4">
+    <button
+      id="show-more-btn"
+      class="bg-green-600 text-white px-4 py-2 rounded-md"
+    >
+      Xem Thêm
+    </button>
+    <button
+      id="hide-btn"
+      class="bg-gray-600 text-white px-4 py-2 rounded-md hidden mt-2"
+    >
+      Ẩn Bớt
+    </button>
+  </div>
+</section>
+
+<style>
+  /* Thêm CSS để ẩn các phần tử ban đầu */
+  .hidden {
+    display: none;
+  }
+</style>
+
+<section class="py-12 bg-green-50">
+  <h2 class="text-center text-2xl md:text-3xl font-bold text-green-600 mb-8">
+    KHÁCH HÀNG NÓI GÌ VỀ DỊCH VỤ CỦA CHÚNG TÔI?
+  </h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+    <!-- Testimonial 1 -->
+    <div
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105 hover:translate-y-2"
+    >
+      <div
+        class="w-36 h-36 mx-auto bg-gray-300 flex items-center justify-center mb-4"
+      >
+        <img
+          src="../../assets/images/avatar1.jpg"
+          alt="Khách hàng A"
+          class="w-full h-full object-cover rounded-lg"
+          Hình
+          ảnh
+          vuông
+          với
+          góc
+          bo
+          tròn
+        />
+      </div>
+      <p class="text-gray-700 italic mb-4">
+        "Dịch vụ chăm sóc sức khỏe tại đây rất chuyên nghiệp. Tôi đã cảm thấy
+        cải thiện rõ rệt sau khi điều trị ở đây!"
+      </p>
+      <h4 class="font-semibold text-lg text-green-700">Nguyễn Thị Mai</h4>
+      <p class="text-gray-500">Khách hàng</p>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105 hover:translate-y-2"
+    >
+      <div
+        class="w-36 h-36 mx-auto bg-gray-300 flex items-center justify-center mb-4"
+      >
+        <img
+          src="../../assets/images/avatar2.jpg"
+          alt="Khách hàng B"
+          class="w-full h-full object-cover rounded-lg"
+          Hình
+          ảnh
+          vuông
+          với
+          góc
+          bo
+          tròn
+        />
+      </div>
+      <p class="text-gray-700 italic mb-4">
+        "Thật sự hài lòng với đội ngũ bác sĩ và các phương pháp điều trị hiệu
+        quả tại đây. Rất đáng để thử!"
+      </p>
+      <h4 class="font-semibold text-lg text-green-700">Lê Minh Tuấn</h4>
+      <p class="text-gray-500">Khách hàng</p>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105 hover:translate-y-2"
+    >
+      <div
+        class="w-36 h-36 mx-auto bg-gray-300 flex items-center justify-center mb-4"
+      >
+        <img
+          src="../../assets/images/avatar3.jpg"
+          alt="Khách hàng C"
+          class="w-full h-full object-cover rounded-lg"
+          Hình
+          ảnh
+          vuông
+          với
+          góc
+          bo
+          tròn
+        />
+      </div>
+      <p class="text-gray-700 italic mb-4">
+        "Dịch vụ chăm sóc khách hàng tuyệt vời và các liệu pháp trị liệu rất
+        hiệu quả. Tôi đã cảm thấy khỏe mạnh hơn rất nhiều!"
+      </p>
+      <h4 class="font-semibold text-lg text-green-700">Trần Đức Anh</h4>
+      <p class="text-gray-500">Khách hàng</p>
     </div>
   </div>
 </section>

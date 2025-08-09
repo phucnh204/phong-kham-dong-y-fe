@@ -4,10 +4,13 @@
   >
     Đội Ngũ Bác Sĩ
   </h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+  <div
+    class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4"
+    id="doctor-grid"
+  >
     <!-- Bác sĩ 1 -->
     <div
-      class="text-center p-4 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
     >
       <img
         src="../../assets/images/anh-bac-si-27.png"
@@ -16,11 +19,17 @@
       />
       <h3 class="mt-2 font-bold text-xl text-green-700">BS. Nguyễn Văn A</h3>
       <p class="text-gray-600">Nội tổng quát</p>
+      <p class="text-gray-500 text-sm mt-2">
+        Với hơn 10 năm kinh nghiệm trong lĩnh vực nội tổng quát, BS. Nguyễn Văn
+        A chuyên chữa trị các bệnh lý cơ bản và các bệnh mãn tính. Phương pháp
+        điều trị an toàn, hiệu quả cao, sử dụng kết hợp giữa thuốc và các liệu
+        pháp tự nhiên.
+      </p>
     </div>
 
     <!-- Bác sĩ 2 -->
     <div
-      class="text-center p-4 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
     >
       <img
         src="../../assets/images/anh-bac-si.png"
@@ -29,11 +38,17 @@
       />
       <h3 class="mt-2 font-bold text-xl text-green-700">BS. Trần Thị B</h3>
       <p class="text-gray-600">Vật lý trị liệu</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Trần Thị B là chuyên gia trong lĩnh vực vật lý trị liệu, chuyên hỗ
+        trợ phục hồi chức năng cho bệnh nhân sau phẫu thuật hoặc bị các chấn
+        thương cơ xương khớp. Áp dụng các kỹ thuật trị liệu tiên tiến để giảm
+        đau và tăng cường khả năng vận động.
+      </p>
     </div>
 
     <!-- Bác sĩ 3 -->
     <div
-      class="text-center p-4 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
     >
       <img
         src="../../assets/images/anh-bac-si-27.png"
@@ -42,18 +57,117 @@
       />
       <h3 class="mt-2 font-bold text-xl text-green-700">BS. Lê Văn C</h3>
       <p class="text-gray-600">Tiêm chủng</p>
+      <p class="text-gray-500 text-sm mt-2">
+        Với 15 năm kinh nghiệm trong việc tiêm chủng cho trẻ em và người lớn,
+        BS. Lê Văn C luôn chú trọng đến sự an toàn của bệnh nhân, đảm bảo quá
+        trình tiêm chủng diễn ra nhanh chóng, hiệu quả và không có phản ứng phụ.
+      </p>
     </div>
-    <!-- Bác sĩ 3 -->
+
+    <!-- Bác sĩ 4 -->
     <div
-      class="text-center p-4 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
     >
       <img
         src="../../assets/images/anh-bac-si.png"
-        alt="Bác sĩ C"
+        alt="Bác sĩ D"
         class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-500 transition-all duration-300"
       />
-      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Lê Văn C</h3>
-      <p class="text-gray-600">Khoa xương kh</p>
+      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Nguyễn Thị D</h3>
+      <p class="text-gray-600">Chuyên gia phụ khoa</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Nguyễn Thị D là chuyên gia phụ khoa, với kinh nghiệm trên 10 năm
+        trong điều trị các bệnh lý về phụ khoa. Cô chuyên điều trị các vấn đề
+        liên quan đến sức khỏe sinh sản và các bệnh lý mãn tính ở phụ nữ.
+      </p>
     </div>
+
+    <!-- Bác sĩ 5 (hidden) -->
+    <div
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hidden"
+    >
+      <img
+        src="../../assets/images/anh-bac-si.png"
+        alt="Bác sĩ E"
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-500 transition-all duration-300"
+      />
+      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Phan Thị E</h3>
+      <p class="text-gray-600">Chuyên gia mắt</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Phan Thị E là bác sĩ chuyên khám và điều trị các bệnh lý về mắt, từ
+        các bệnh về giác mạc đến các bệnh lý mắt phổ biến như cận thị, loạn thị,
+        viêm kết mạc và các bệnh liên quan đến mắt người cao tuổi.
+      </p>
+    </div>
+
+    <!-- Bác sĩ 6 (hidden) -->
+    <div
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hidden"
+    >
+      <img
+        src="../../assets/images/anh-bac-si.png"
+        alt="Bác sĩ F"
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-500 transition-all duration-300"
+      />
+      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Lê Văn F</h3>
+      <p class="text-gray-600">Chuyên gia thẩm mỹ</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Lê Văn F chuyên điều trị các vấn đề về thẩm mỹ, bao gồm phẫu thuật
+        thẩm mỹ, điều trị các vấn đề về da, làm đẹp toàn diện với phương pháp
+        hiện đại và an toàn.
+      </p>
+    </div>
+
+    <!-- Bác sĩ 7 (hidden) -->
+    <div
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hidden"
+    >
+      <img
+        src="../../assets/images/anh-bac-si.png"
+        alt="Bác sĩ G"
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-500 transition-all duration-300"
+      />
+      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Trần Văn G</h3>
+      <p class="text-gray-600">Chuyên gia tim mạch</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Trần Văn G chuyên điều trị các bệnh lý về tim mạch như tăng huyết
+        áp, bệnh tim mạch, suy tim, và các bệnh lý liên quan đến hệ tuần hoàn,
+        với phương pháp điều trị tân tiến nhất.
+      </p>
+    </div>
+
+    <!-- Bác sĩ 8 (hidden) -->
+    <div
+      class="doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hidden"
+    >
+      <img
+        src="../../assets/images/anh-bac-si.png"
+        alt="Bác sĩ H"
+        class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-green-500 transition-all duration-300"
+      />
+      <h3 class="mt-2 font-bold text-xl text-green-700">BS. Vũ Thị H</h3>
+      <p class="text-gray-600">Chuyên gia da liễu</p>
+      <p class="text-gray-500 text-sm mt-2">
+        BS. Vũ Thị H là bác sĩ chuyên khám và điều trị các vấn đề về da liễu,
+        như mụn, eczema, viêm da, và các vấn đề về da khác với các phương pháp
+        điều trị hiện đại và an toàn.
+      </p>
+    </div>
+  </div>
+
+  <!-- Nút xem thêm và ẩn bớt -->
+  <div class="text-center mt-4">
+    <button
+      id="show-more-btn-2"
+      class="bg-green-600 text-white px-4 py-2 rounded-md"
+    >
+      Xem Thêm
+    </button>
+    <button
+      id="hide-btn-2"
+      class="bg-gray-600 text-white px-4 py-2 rounded-md hidden mt-2"
+    >
+      Ẩn Bớt
+    </button>
   </div>
 </section>

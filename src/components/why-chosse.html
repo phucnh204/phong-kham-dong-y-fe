@@ -7,17 +7,19 @@
   <div class="grid md:grid-cols-3 gap-6 px-6">
     <!-- Card 1 -->
     <div
-      class="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 text-center"
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105"
     >
-      <img
-        src="../../assets/images/giay-phep-hoat-dong.png"
-        alt=""
-        srcset=""
-        class="w-36 h-36 mx-auto flex items-center justify-center rounded-full mb-4"
-      />
-
-      <h3 class="text-xl font-semibold mb-2">Giấy Phép Hoạt Động</h3>
-      <p class="text-gray-700">
+      <div class="mb-4">
+        <img
+          src="../../assets/images/giay-phep-hoat-dong.png"
+          alt="Giấy phép hoạt động"
+          class="w-36 h-36 mx-auto rounded-full transition-all duration-300"
+        />
+      </div>
+      <h3 class="text-xl font-semibold text-green-700 mb-2">
+        Giấy Phép Hoạt Động
+      </h3>
+      <p class="text-gray-700 text-sm md:text-base">
         Phòng Khám Đông Y Phục Sinh được cấp phép hoạt động bởi Sở Y Tế tỉnh
         Thanh Hóa.
       </p>
@@ -25,16 +27,19 @@
 
     <!-- Card 2 -->
     <div
-      class="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 text-center"
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105"
     >
-      <img
-        src="../../assets/images/chung-chi-hanh-nghe.png"
-        alt=""
-        srcset=""
-        class="w-36 h-36 mx-auto flex items-center justify-center rounded-full mb-4"
-      />
-      <h3 class="text-xl font-semibold mb-2">Chứng Chỉ Hành Nghề</h3>
-      <p class="text-gray-700">
+      <div class="mb-4">
+        <img
+          src="../../assets/images/chung-chi-hanh-nghe.png"
+          alt="Chứng chỉ hành nghề"
+          class="w-36 h-36 mx-auto rounded-full transition-all duration-300"
+        />
+      </div>
+      <h3 class="text-xl font-semibold text-green-700 mb-2">
+        Chứng Chỉ Hành Nghề
+      </h3>
+      <p class="text-gray-700 text-sm md:text-base">
         Đội ngũ bác sĩ, chuyên gia được Sở Y Tế Thanh Hóa cấp chứng chỉ hành
         nghề khám chữa bệnh bằng Y Học Cổ Truyền.
       </p>
@@ -42,19 +47,67 @@
 
     <!-- Card 3 -->
     <div
-      class="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 text-center"
+      class="bg-white p-6 shadow-xl rounded-lg hover:shadow-2xl transition-all duration-300 text-center transform hover:scale-105"
     >
-      <img
-        src="../../assets/images/ngai-cuu-chua-benh-bluecare.png"
-        alt=""
-        srcset=""
-        class="w-36 h-36 mx-auto flex items-center justify-center rounded-full mb-4"
-      />
-      <h3 class="text-xl font-semibold mb-2">Dược Liệu Sạch</h3>
-      <p class="text-gray-700">
+      <div class="mb-4">
+        <img
+          src="../../assets/images/ngai-cuu-chua-benh-bluecare.png"
+          alt="Dược liệu sạch"
+          class="w-36 h-36 mx-auto rounded-full transition-all duration-300"
+        />
+      </div>
+      <h3 class="text-xl font-semibold text-green-700 mb-2">Dược Liệu Sạch</h3>
+      <p class="text-gray-700 text-sm md:text-base">
         Toàn bộ dược liệu sử dụng trong khám chữa bệnh tại Đông Y Phục Sinh là
         100% dược liệu sạch.
       </p>
     </div>
   </div>
 </section>
+
+<style>
+  /* Thêm phần mở rộng UI cho hiệu ứng hover */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Title Effect */
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4caf50; /* Green */
+  }
+
+  .bg-green-50 {
+    background-color: #e3f9e5; /* Light Green */
+  }
+
+  /* For responsive design */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+
+    h2 {
+      font-size: 1.8rem; /* Make title a bit smaller on mobile */
+    }
+  }
+
+  /* Styling Card Titles */
+  .text-green-700 {
+    color: #388e3c; /* Darker Green */
+  }
+
+  .text-gray-700 {
+    color: #4b4b4b; /* Slightly darker gray for the description */
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+  }
+
+  .text-base {
+    font-size: 1rem;
+  }
+</style>

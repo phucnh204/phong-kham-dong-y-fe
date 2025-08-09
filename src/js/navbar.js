@@ -2,7 +2,12 @@
 import { mountHTML } from "./../../utils/dom.js";
 
 export async function mountNavbar() {
-  await mountHTML("navbar", "src/components/navbar.html", setupNavigation);
+  await mountHTML(
+    "navbar",
+    "src/components/navbar.html",
+
+    setupNavigation
+  );
 }
 
 function setupNavigation() {

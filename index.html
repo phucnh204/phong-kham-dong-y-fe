@@ -10,13 +10,14 @@
     <title>Phòng Khám Y Khoa</title>
 
     <link rel="stylesheet" href="./src/output.css" />
-
-    <!-- <link rel="stylesheet" href="swiper/swiper-bundle.min.css" /> -->
-    <!-- <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" /> -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    /> -->
+    <link rel="stylesheet" href="./src/libs/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./src/libs/notyf.min.css" />
+    <!-- <link rel="stylesheet" href="./src/libs/notyf.min.css"> -->
   </head>
 
   <body class="font-sans text-gray-800 lg:px-20">
@@ -28,6 +29,7 @@
 
     <!-- Banner -->
     <div id="banner"></div>
+
     <!-- Giới thiệu -->
     <div id="about"></div>
 
@@ -46,282 +48,15 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <script src="./js/main.js"></script>
+    <script type="module" src="./index.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="./src/libs/swiper-bundle.min.js"></script>
 
-    <!-- <script src="./swiper/swiper-bundle.min.js"></script> -->
-    <!-- <script src="./node_modules/swiper/swiper-bundle.min.js"></script> -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- EmailJS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
 
-    <script>
-      // inlude header.html
-      fetch("./src/components/header.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("header").innerHTML = html;
-        });
+    <script src="./src/libs/notyf.min.js"></script>
 
-      document.head.insertAdjacentHTML(
-        "beforeend",
-        `
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Active nav link styling */
-    .nav-link.active {
-      background-color: rgb(34 197 94);
-      color: white;
-    }
-  </style>
-`
-      );
-
-      // include navbar.html
-      fetch("./src/components/navbar.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("navbar").innerHTML = html;
-
-          const menuBtn = document.getElementById("menu-btn");
-          const closeBtn = document.getElementById("close-menu");
-          const menu = document.getElementById("menu");
-          const overlay = document.getElementById("overlay");
-
-          // Open menu
-          menuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            menu.classList.remove("translate-x-full");
-            menu.classList.add("translate-x-0");
-            overlay.classList.remove("hidden");
-            document.body.style.overflow = "hidden";
-          });
-
-          // Close menu
-          function closeMenu() {
-            menu.classList.add("translate-x-full");
-            menu.classList.remove("translate-x-0");
-            overlay.classList.add("hidden");
-            document.body.style.overflow = "auto";
-          }
-
-          closeBtn.addEventListener("click", closeMenu);
-          overlay.addEventListener("click", closeMenu);
-
-          // Handle navigation links
-          const navLinks = document.querySelectorAll(".nav-link");
-          navLinks.forEach((link) => {
-            link.addEventListener("click", function (e) {
-              e.preventDefault();
-
-              // Close mobile menu if open
-              if (window.innerWidth < 768) {
-                closeMenu();
-              }
-
-              // Get target section
-              const targetId = this.getAttribute("href").substring(1);
-              const targetSection = document.getElementById(targetId);
-
-              if (targetSection) {
-                // Calculate offset for fixed navbar (if you make it fixed)
-                const navbarHeight = document.querySelector("nav").offsetHeight;
-                const targetPosition =
-                  targetSection.offsetTop - navbarHeight - 20;
-
-                // Smooth scroll to target
-                window.scrollTo({
-                  top: Math.max(0, targetPosition),
-                  behavior: "smooth",
-                });
-
-                // Update active link
-                navLinks.forEach((nav) => nav.classList.remove("active"));
-                this.classList.add("active");
-              }
-            });
-          });
-
-          // Handle window resize
-          window.addEventListener("resize", function () {
-            if (window.innerWidth >= 768) {
-              closeMenu();
-            }
-          });
-
-          // Update active nav on scroll
-          window.addEventListener("scroll", function () {
-            let current = "";
-            const sections = [
-              "banner",
-              "about",
-              "service",
-              "card-doctor",
-              // "why-chosse",
-              // "footer",
-            ];
-
-            sections.forEach((sectionId) => {
-              const section = document.getElementById(sectionId);
-              if (section) {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-
-                if (
-                  window.scrollY >= sectionTop &&
-                  window.scrollY < sectionTop + sectionHeight
-                ) {
-                  current = sectionId;
-                }
-              }
-            });
-
-            // nav link
-            navLinks.forEach((link) => {
-              link.classList.remove("active");
-              if (link.getAttribute("href") === `#${current}`) {
-                link.classList.add("active");
-              }
-            });
-          });
-        });
-
-      // inlude banner.html
-      fetch("./src/components/banner.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("banner").innerHTML = html;
-
-          const swiper = new Swiper(".swiper-container", {
-            loop: true,
-            autoplay: {
-              delay: 2500,
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-              // Khi nhỏ hơn 768px
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                height: 250,
-              },
-              // 768px trở lên
-              1024: {
-                slidesPerView: 1.5,
-                spaceBetween: 5,
-                height: 300,
-              },
-              // Màn hình máy tính lớn
-              1280: {
-                slidesPerView: 2,
-                spaceBetween: 5,
-                height: 3500,
-              },
-            },
-            // effect: " fade",
-            // fade: { crossFade: true },
-          });
-        });
-
-      // inlude service.html
-      fetch("./src/components/service.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("service").innerHTML = html;
-        });
-
-      // inlude why-chosse.html
-      fetch("./src/components/why-chosse.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("why-chosse").innerHTML = html;
-        });
-
-      // inlude about.html
-      fetch("./src/components/about.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("about").innerHTML = html;
-        });
-
-      // inlude doctor.html
-      fetch("./src/components/card-doctor.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("card-doctor").innerHTML = html;
-        });
-
-      // inlude dat-lich.html
-      fetch("./src/components/dat-lich.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("dat-lich").innerHTML = html;
-          (function () {
-            const btn = document.getElementById("btn-dang-ky");
-            const popup = document.getElementById("popup");
-            const popupContent = document.getElementById("popup-content");
-            const closeBtn = document.getElementById("close-popup");
-
-            if (!btn || !popup || !popupContent || !closeBtn) return;
-
-            const DAT_LICH_URL = "./src/components/dat-lich.html";
-
-            function openPopup() {
-              popup.classList.remove("hidden");
-              document.body.style.overflow = "hidden";
-              btn.setAttribute("aria-expanded", "true");
-            }
-
-            function closePopup() {
-              popup.classList.add("hidden");
-              document.body.style.overflow = "";
-              btn.setAttribute("aria-expanded", "false");
-            }
-
-            btn.addEventListener("click", async () => {
-              try {
-                popupContent.innerHTML =
-                  '<div class="p-4 text-sm text-gray-500">Đang tải…</div>';
-                const res = await fetch(DAT_LICH_URL, { cache: "no-store" });
-                if (!res.ok) throw new Error("Không tải được dat-lich.html");
-                const html = await res.text();
-                popupContent.innerHTML = html;
-                openPopup();
-              } catch (e) {
-                popupContent.innerHTML = `<div class="p-4 text-red-600">Lỗi tải nội dung: ${e.message}</div>`;
-                openPopup();
-              }
-            });
-
-            closeBtn.addEventListener("click", closePopup);
-
-            // Click nền đen để đóng
-            popup.addEventListener("click", (e) => {
-              // nếu click đúng overlay (nền tối)
-              if (e.target === popup.firstElementChild) closePopup();
-            });
-
-            // ESC để đóng
-            window.addEventListener("keydown", (e) => {
-              if (e.key === "Escape" && !popup.classList.contains("hidden"))
-                closePopup();
-            });
-          })();
-        });
-
-      // inlude footer.html
-      fetch("./src/components/footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footer").innerHTML = html;
-        });
-    </script>
+    <script></script>
   </body>
 </html>

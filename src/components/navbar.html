@@ -1,9 +1,18 @@
-<nav class="shadow mb-0.5 bg-green-50 relative">
+<nav
+  id="smart-navbar"
+  class="shadow mb-0.5 bg-green-50 relative z-50 transition-all duration-300"
+  aria-label="Main navigation"
+  data-aos="fade-up"
+>
   <div
     class="container flex items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
   >
     <!-- Mobile menu button -->
-    <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+    <button
+      id="menu-btn"
+      class="md:hidden text-gray-800 focus:outline-none"
+      aria-label="Mở menu điều hướng"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-8 w-8"
@@ -23,12 +32,13 @@
     <!-- Main menu -->
     <ul
       id="menu"
-      class="fixed top-0 left-0 w-full h-full bg-green-50 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 pt-16 md:static md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:relative md:transform-none md:translate-x-0 md:w-auto md:h-auto md:pt-0 md:bg-transparent"
+      class="fixed top-0 left-0 w-full h-full bg-green-50 shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out z-40 pt-16 md:static md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:relative md:transform-none md:translate-x-0 md:w-auto md:h-auto md:pt-0 md:bg-transparent"
     >
       <!-- Close button for mobile -->
       <button
         id="close-menu"
         class="absolute top-4 right-4 text-gray-800 md:hidden"
+        aria-label="Đóng menu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +85,15 @@
           href="#card-doctor"
           class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
         >
-          Đội ngũ
+          Đội ngũ/Nhân sự
+        </a>
+      </li>
+      <li>
+        <a
+          href="#card-doctor"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+        >
+          Tin tức
         </a>
       </li>
       <li>
@@ -83,6 +101,7 @@
           href="#why-chosse"
           class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
         >
+          Vì sao chọn chúng tôi
         </a>
       </li>
       <li>
@@ -90,13 +109,14 @@
           href="#footer"
           class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
         >
+          Liên hệ
         </a>
       </li>
     </ul>
   </div>
 
   <!-- Search box (mobile only) -->
-  <!-- <div class="flex md:hidden px-4 pb-3">
+  <div class="flex md:hidden px-4 pb-3">
     <input
       type="text"
       placeholder="Tìm kiếm…"
@@ -104,6 +124,7 @@
     />
     <button
       class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-r"
+      aria-label="Tìm kiếm"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -118,10 +139,11 @@
         />
       </svg>
     </button>
-  </div> -->
+  </div>
 </nav>
+
 <!-- Overlay for mobile menu -->
 <div
   id="overlay"
-  class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"
+  class="fixed inset-0 bg-gray-200 bg-opacity-50 z-30 hidden md:hidden"
 ></div>

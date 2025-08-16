@@ -1,147 +1,49 @@
-<footer class="bg-green-600 text-white p-8">
-  <div class="max-w-screen-xl mx-auto flex justify-between items-center">
-    <!-- Left Side: Address & Social Media -->
-    <div class="flex flex-col space-y-4">
-      <h3 class="text-3xl font-semibold mb-2 text-yellow-500">
-        PHÒNG KHÁM ĐÔNG Y
-      </h3>
-      <p class="text-lg mb-2">
-        Địa chỉ: Số 282 đường Nguyễn Trãi, thành phố Cần Thơ, Việt Nam
-      </p>
-      <p class="text-lg">
-        Hotline: <span class="font-semibold">084 666 2995</span>
-      </p>
+<footer class="bg-green-500 text-white px-6 py-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Thông tin liên hệ & Mạng xã hội -->
+    <div class="space-y-5">
+      <h3 class="text-3xl font-bold text-yellow-400">PHÒNG KHÁM ĐÔNG Y</h3>
 
-      <!-- Social Media Links -->
-      <div class="mt-4 space-x-4">
-        <a
-          href="https://www.facebook.com/PhongKhamDongY"
-          target="_blank"
-          class="text-white hover:text-yellow-500 transition-colors duration-300"
-        >
-          <!-- Facebook Icon (Tailwind CSS Text-based) -->
-          <span class="text-3xl">📱</span>
-        </a>
-        <!-- Instagram Example -->
-        <a
-          href="https://www.instagram.com/PhongKhamDongY"
-          target="_blank"
-          class="text-white hover:text-yellow-500 transition-colors duration-300"
-        >
-          <!-- Instagram Icon -->
-          <span class="text-3xl">📸</span>
-        </a>
+      <div class="flex items-start gap-3 text-lg">
+        <span class="text-yellow-300 text-xl">📍</span>
+        <p>Số 282 đường Nguyễn Trãi, thành phố Cần Thơ, Việt Nam</p>
+      </div>
+
+      <div class="flex items-start gap-3 text-lg">
+        <span class="text-yellow-300 text-xl">📞</span>
+        <p>Hotline: <span class="font-semibold">084 666 2995</span></p>
       </div>
     </div>
 
-    <!-- Right Side: Working Hours -->
-    <div class="flex flex-col text-right space-y-4">
-      <h3 class="text-xl font-semibold mb-2">Lịch làm việc</h3>
-      <p class="text-lg mb-2">Làm việc tất cả các ngày trong tuần</p>
-      <p class="text-lg mb-2">Sáng: 8h - 12h</p>
-      <p class="text-lg mb-2">Chiều: 13h30 - 17h30</p>
-      <p class="text-lg mt-4">
-        Nếu cần sau 17h30 vui lòng liên hệ trước để bác sĩ sắp xếp lịch
+    <!-- Lịch làm việc -->
+    <div class="space-y-3 text-left md:text-right">
+      <h3 class="text-2xl font-semibold text-yellow-300">Lịch làm việc</h3>
+
+      <div class="flex justify-start md:justify-end items-center gap-3 text-lg">
+        <span class="text-yellow-300 text-xl">🗓</span>
+        <p>Làm việc tất cả các ngày trong tuần</p>
+      </div>
+
+      <div class="flex justify-start md:justify-end items-center gap-3 text-lg">
+        <span class="text-yellow-300 text-xl">🌤</span>
+        <p>Sáng: 8h - 12h</p>
+      </div>
+
+      <div class="flex justify-start md:justify-end items-center gap-3 text-lg">
+        <span class="text-yellow-300 text-xl">🌆</span>
+        <p>Chiều: 13h30 - 17h30</p>
+      </div>
+
+      <p class="text-sm text-gray-300 italic mt-2">
+        Nếu cần sau 17h30, vui lòng liên hệ trước để bác sĩ sắp xếp.
       </p>
     </div>
   </div>
 
-  <div class="text-center text-sm mt-6 border-t-2 border-yellow-500 pt-4">
-    <p>&copy; 2025 Phòng Khám Đông Y. Tất cả quyền được bảo vệ.</p>
+  <!-- Bản quyền -->
+  <div
+    class="mt-12 pt-6 border-t border-yellow-500 text-center text-sm text-gray-300"
+  >
+    &copy; 2025 Phòng Khám Đông Y. Tất cả quyền được bảo vệ.
   </div>
 </footer>
-
-<!-- Tailwind CSS Custom Styling for Icons and Hover Effects -->
-<style>
-  footer .text-yellow-500 {
-    color: #fbbf24;
-  }
-
-  footer .hover\:text-yellow-500:hover {
-    color: #fbbf24;
-  }
-
-  footer .transition-colors {
-    transition: color 0.3s ease;
-  }
-
-  footer .space-x-4 > * {
-    margin-right: 1rem;
-  }
-
-  footer .text-sm {
-    font-size: 0.875rem;
-  }
-
-  footer .text-lg {
-    font-size: 1.125rem;
-  }
-
-  footer .text-xl {
-    font-size: 1.25rem;
-  }
-
-  footer .text-3xl {
-    font-size: 1.875rem;
-  }
-
-  footer .font-semibold {
-    font-weight: 600;
-  }
-
-  footer .space-y-4 > * {
-    margin-bottom: 1rem;
-  }
-
-  footer .bg-green-600 {
-    background-color: #2a6a47;
-  }
-
-  footer .p-8 {
-    padding: 2rem;
-  }
-
-  footer .text-center {
-    text-align: center;
-  }
-
-  footer .text-right {
-    text-align: right;
-  }
-
-  footer .hover\:scale-105:hover {
-    transform: scale(1.05);
-  }
-
-  footer .rounded-lg {
-    border-radius: 0.5rem;
-  }
-
-  footer .shadow-xl {
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  footer .transition-all {
-    transition: all 0.3s ease;
-  }
-
-  footer .text-gray-700 {
-    color: #4b5563;
-  }
-
-  footer .text-white {
-    color: #ffffff;
-  }
-
-  footer .space-x-4 > * {
-    margin-right: 1rem;
-  }
-
-  footer .w-24 {
-    width: 6rem;
-  }
-
-  footer .h-24 {
-    height: 6rem;
-  }
-</style>

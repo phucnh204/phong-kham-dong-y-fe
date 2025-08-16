@@ -2,12 +2,10 @@
 import { mountHTML } from "./../../utils/dom.js";
 
 export async function mountNavbar() {
-  await mountHTML(
-    "navbar",
-    "src/components/navbar.html",
-
-    setupNavigation
-  );
+  await mountHTML("navbar", "src/components/navbar.html", () => {
+    setupNavigation();
+    setupNavigationFixed();
+  });
 }
 
 function setupNavigation() {
@@ -78,5 +76,32 @@ function setupNavigation() {
         link.getAttribute("href") === `#${current}`
       );
     });
+  });
+}
+
+function setupNavigationFixed() {
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("smart-navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 0) {
+      // Trở lại đầu trang  như thường
+      navbar.classList.remove("fixed", "top-0", "translate-y-0", "shadow-md");
+      navbar.classList.add("relative");
+    } else if (currentScrollY > lastScrollY) {
+      // Cuộn xuống  giữ cố định
+      navbar.classList.remove("relative");
+      navbar.classList.add(
+        "fixed",
+        "top-0",
+        "w-full",
+        "translate-y-0",
+        "shadow-md"
+      );
+    }
+
+    lastScrollY = currentScrollY;
   });
 }

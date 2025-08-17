@@ -16,7 +16,7 @@ function setupNavigation() {
   if (!overlay) {
     overlay = document.createElement("div");
     overlay.id = "overlay";
-    overlay.className = "fixed inset-0 bg-black bg-opacity-50 z-30 hidden";
+    overlay.className = "fixed left-10  bg-opacity-50 z-30 hidden ";
     document.body.appendChild(overlay);
   }
   if (!menuBtn || !closeBtn || !menu) return;
@@ -27,12 +27,15 @@ function setupNavigation() {
     menu.classList.add("translate-x-0");
     overlay.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+
+    document.body.style.touchAction = "none";
   }
   function closeMenu() {
     menu.classList.add("translate-x-full");
     menu.classList.remove("translate-x-0");
     overlay.classList.add("hidden");
     document.body.style.overflow = "";
+    document.body.style.touchAction = "";
   }
 
   menuBtn.addEventListener("click", openMenu);
@@ -96,6 +99,9 @@ function setupNavigationFixed() {
       navbar.classList.add(
         "fixed",
         "top-0",
+        // "inset-x-0",
+        "left-0",
+        "right-0",
         "w-full",
         "translate-y-0",
         "shadow-md"

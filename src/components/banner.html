@@ -1,52 +1,79 @@
-<section class="bg-white mb-1 shadow relative" data-aos="fade-up">
-  <div class="swiper-container w-full mx-auto overflow-hidden">
-    <!-- Hide overflow here -->
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <img
-          src="../../assets/images/banner-doi-ngu-bac-si-4.png"
-          alt="Image 1"
-          class="w-full h-auto object-cover rounded-lg"
-        />
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide">
-        <img
-          src="../../assets/images/banner-doi-tac.png"
-          alt="Image 2"
-          class="w-full h-auto object-cover rounded-lg"
-        />
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide">
-        <img
-          src="../../assets/images/banner-phong-kham-da-khoa-2.png"
-          alt="Image 3"
-          class="w-full h-auto object-cover rounded-lg"
-        />
+<section
+  class="w-full bg-white py-1 mb-3 px-2 md:h-[300px] lg:h-[265px] xl:h-[400px]"
+>
+  <div class="grid grid-cols-12 gap-2 items-stretch">
+    <!--  SWIPER -->
+    <div
+      class="col-span-8 relative overflow-hidden shadow-md"
+      data-aos="fade-up"
+    >
+      <div class="swiper-container w-full overflow-hidden">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <img
+              src="../../assets/images/banner-mau-to-roi-phong-kham.png"
+              alt="Image 1"
+              class="w-full md:h-[350px] lg:h-[400px] object-cover"
+            />
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <img
+              src="../../assets/images/banner-doi-tac.png"
+              alt="Image 2"
+              class="w-full md:h-[350px] lg:h-[400px] object-cover"
+            />
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <img
+              src="../../assets/images/banner-1.png"
+              alt="Image 3"
+              class="w-full md:h-[350px] lg:h-[400px] object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div
+          class="swiper-pagination absolute bottom-2 left-0 right-0 flex justify-center space-x-2 z-10"
+        ></div>
+
+        <!-- Navigation buttons -->
+        <div
+          class="swiper-button-next text-white text-xl absolute top-1/2 transform -translate-y-1/2 right-2 rounded-full p-2 opacity-70 hover:opacity-100 transition-all z-10"
+        ></div>
+        <div
+          class="swiper-button-prev text-white text-xl absolute top-1/2 transform -translate-y-1/2 left-2 rounded-full p-2 opacity-70 hover:opacity-100 transition-all z-10"
+        ></div>
       </div>
     </div>
 
-    <!-- Pagination -->
-    <div
-      class="swiper-pagination absolute bottom-6 left-0 right-0 flex justify-center space-x-2"
-    ></div>
-
-    <!-- Navigation buttons -->
-    <div
-      class="swiper-button-next text-white text-xl absolute top-1/2 transform -translate-y-1/2 right-6 rounded-full p-2 opacity-70 hover:opacity-100 transition-all z-10"
-    ></div>
-    <div
-      class="swiper-button-prev text-white text-xl absolute top-1/2 transform -translate-y-1/2 left-6 rounded-full p-2 opacity-70 hover:opacity-100 transition-all z-10"
-    ></div>
+    <!--  BANNER TĨNH -->
+    <div class="col-span-4 flex flex-col gap-2 h-[400px]" data-aos="slide-up">
+      <div class="overflow-hidden shadow-md">
+        <img
+          src="../../assets/images/banner-doi-ngu-bac-si-4.png"
+          alt="Right Banner 1"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="overflow-hidden shadow-md">
+        <img
+          src="../../assets/images/pktmngocanh.png"
+          alt="Right Banner 1"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
   </div>
 </section>
 
 <section
   id="hero"
   class="relative bg-green-50 overflow-hidden"
-  data-aos="fade-up"
+  data-aos="fade-down"
 >
   <div
     class="max-w-7xl mx-auto px-4 py-10 lg:py-16 grid lg:grid-cols-2 gap-8 items-center"

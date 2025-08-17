@@ -1,11 +1,11 @@
 <nav
   id="smart-navbar"
-  class="shadow mb-0.5 bg-green-50 relative z-50 transition-all duration-300"
+  class="shadow mb-0.5 bg-green-50 relative z-[60] transition-all duration-300"
   aria-label="Main navigation"
   data-aos="fade-up"
 >
   <div
-    class="container flex items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
+    class="container flex md:hidden items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
   >
     <!-- Mobile menu button -->
     <button
@@ -30,14 +30,18 @@
     </button>
 
     <!-- Main menu -->
+  </div>
+  <div class="">
     <ul
       id="menu"
-      class="fixed top-0 left-0 w-full h-full bg-green-50 shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out z-40 pt-16 md:static md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:relative md:transform-none md:translate-x-0 md:w-auto md:h-auto md:pt-0 md:bg-transparent"
+      role="navigation"
+      aria-label="Menu chính"
+      class="fixed justify-center inset-0 z-[70] w-screen h-screen bg-green-50 shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out will-change-transform pt-16 px-6 box-border overflow-y-auto overscroll-contain touch-pan-y md:static md:z-auto md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:p-2 md:transform-none md:translate-x-0 md:w-auto md:h-auto md:bg-transparent"
     >
-      <!-- Close button for mobile -->
+      <!-- Nút đóng menu mobile -->
       <button
         id="close-menu"
-        class="absolute top-4 right-4 text-gray-800 md:hidden"
+        class="absolute top-4 right-4 text-gray-800 hover:text-red-500 transition duration-200 md:hidden"
         aria-label="Đóng menu"
       >
         <svg
@@ -56,10 +60,11 @@
         </svg>
       </button>
 
+      <!-- Các mục menu -->
       <li>
         <a
           href="#banner"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Trang chủ
         </a>
@@ -67,7 +72,7 @@
       <li>
         <a
           href="#about"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Giới thiệu
         </a>
@@ -75,7 +80,7 @@
       <li>
         <a
           href="#service"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Dịch vụ
         </a>
@@ -83,23 +88,23 @@
       <li>
         <a
           href="#card-doctor"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Đội ngũ/Nhân sự
         </a>
       </li>
       <li>
         <a
-          href="#card-doctor"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          href="#news"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Tin tức
         </a>
       </li>
       <li>
         <a
-          href="#why-chosse"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-600 hover:text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          href="#why-choose"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Vì sao chọn chúng tôi
         </a>
@@ -107,43 +112,41 @@
       <li>
         <a
           href="#footer"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-2 md:py-1.5 text-green-700 hover:bg-green-100 transition-colors duration-200 rounded-md"
+          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
         >
           Liên hệ
         </a>
       </li>
     </ul>
-  </div>
-
-  <!-- Search box (mobile only) -->
-  <div class="flex md:hidden px-4 pb-3">
-    <input
-      type="text"
-      placeholder="Tìm kiếm…"
-      class="flex-grow border border-gray-300 rounded-l px-3 py-2 text-sm focus:outline-none"
-    />
-    <button
-      class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-r"
-      aria-label="Tìm kiếm"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="size-6"
+    <!-- <div class="flex px-4 pb-3 z-[100]">
+      <input
+        type="text"
+        placeholder="Tìm kiếm…"
+        class="flex-grow border border-gray-300 rounded-l px-3 py-2 text-sm focus:outline-none"
+      />
+      <button
+        class="bg-green-500 hover:bg-green-600 text-green-900 px-3 py-2 rounded-r"
+        aria-label="Tìm kiếm"
       >
-        <path
-          fill-rule="evenodd"
-          d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div> -->
   </div>
 </nav>
 
 <!-- Overlay for mobile menu -->
 <div
   id="overlay"
-  class="fixed inset-0 bg-gray-200 bg-opacity-50 z-30 hidden md:hidden"
+  class="fixed inset-0 bg-opacity-50 z-[65] hidden md:hidden"
 ></div>

@@ -130,8 +130,6 @@ function setupDatLichPopup() {
     }
 
     try {
-      // Đảm bảo EmailJS sẵn sàng (nếu đã nạp qua index.html thì có thể bỏ dòng này)
-
       await ensureEmailJS();
 
       const payload = {

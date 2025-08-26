@@ -1,6 +1,6 @@
 <section
   id="popup-2"
-  class="hidden fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+  class="popup-hidden fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
 >
   <div id="popup-2-overlay" class="absolute inset-0 z-0"></div>
   <div
@@ -76,3 +76,12 @@
     </div>
   </div>
 </section>
+
+<style>
+  .popup-hidden {
+    display: none !important;
+  }
+  .popup-visible {
+    display: flex !important;
+  }
+</style>

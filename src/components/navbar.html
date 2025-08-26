@@ -1,10 +1,10 @@
 <section>
   <nav
-    id="smart-navbar"
-    class="shadow bg-green-50 relative z-[60] transition-all duration-300"
-    aria-label="Main navigation"
-    data-aos="fade-up"
-  >
+  id="smart-navbar"
+  class="w-full bg-green-50 z-[60] transition-all duration-300"
+  aria-label="Main navigation"
+  data-aos="fade-down"
+>
     <div
       class="container flex md:hidden items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
     >
@@ -33,6 +33,7 @@
       <!-- Main menu -->
     </div>
     <div class="">
+       <div class="">
       <ul
         id="menu"
         role="navigation"
@@ -103,47 +104,50 @@
             Liên hệ
           </a>
         </li>
-        <li>
-          <a
-            href="#footer"
-            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
-          >
-            Liên hệ
-          </a>
-        </li>
-        <li>
-          <a
-            href="#footer"
-            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
-          >
-            Liên hệ
-          </a>
-        </li>
+        <li class="relative group">
+  <a
+    href="#"
+    class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000 flex items-center gap-2"
+  >
+    Mục khác
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      class="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+  
+  <!-- Submenu -->
+  <ul class="submenu absolute left-0 mt-1 py-2 w-48 bg-white rounded-lg shadow-xl z-50">
+    <li>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white">
+        Tin tức
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white">
+        Bài viết
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white">
+        Đặt lịch
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white">
+        Tư vấn
+      </a>
+    </li>
+  </ul>
+</li>
+        
       </ul>
-      <!-- <div class="flex px-4 pb-3 z-[100]">
-      <input
-        type="text"
-        placeholder="Tìm kiếm…"
-        class="flex-grow border border-gray-300 rounded-l px-3 py-2 text-sm focus:outline-none"
-      />
-      <button
-        class="bg-green-500 hover:bg-green-600 text-green-900 px-3 py-2 rounded-r"
-        aria-label="Tìm kiếm"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="size-6"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-    </div> -->
+      
     </div>
   </nav>
 
@@ -153,3 +157,119 @@
     class="fixed inset-0 bg-opacity-50 z-[65] hidden md:hidden"
   ></div>
 </section>
+
+<style>
+  #smart-navbar {
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#smart-navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+  .nav-link.active {
+    @apply text-green-500 after:w-full;
+  }
+    .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link.active {
+    @apply text-green-500;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+    opacity: 1;
+  }
+
+  /* hover */
+  .nav-link:hover::after {
+    width: 100%;
+    opacity: 0.7;
+  }
+
+    /* Submenu styles */
+ @media (min-width: 768px) {
+    .group {
+      position: relative;
+    }
+
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 0.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      z-index: 9999;
+      display: none;
+      transform: translateY(10px);
+    }
+
+    .group:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      display: block;
+    }
+
+    
+    #smart-navbar {
+      position: relative;
+      overflow: visible !important;
+    }
+
+    #menu {
+      overflow: visible !important;
+    }
+
+    .submenu li {
+      ;
+    }
+
+    .submenu li:last-child {
+      border-bottom: none;
+    }
+
+    .submenu li a {
+      padding: 0.75rem ;
+      font-size: 1rem;
+      display: block;
+      color: #4a5568;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .submenu li a:hover {
+      background-color: #10B981;
+      color: white;
+    }
+  }
+
+  /* Mobile submenu styles */
+  @media (max-width: 767px) {
+    .submenu {
+      position: static;
+      width: 100%;
+      background: transparent;
+      box-shadow: none;
+      padding-left: 1rem;
+      display: none;
+    }
+
+    .group.active .submenu {
+      display: block;
+    }
+  }
+</style>

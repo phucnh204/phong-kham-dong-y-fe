@@ -44,16 +44,38 @@ function setupNavigation() {
 
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
+    link.addEventListener("click", async (e) => {
       e.preventDefault();
-      if (window.innerWidth < 768) closeMenu();
-      const id = link.getAttribute("href").substring(1);
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const id = href.substring(1);
       const target = document.getElementById(id);
       if (!target) return;
+
       const navbar = document.querySelector("nav");
       const navbarHeight = navbar ? navbar.offsetHeight : 0;
       const top = target.offsetTop - navbarHeight - 20;
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+
+      if (window.innerWidth < 768) {
+        // Đóng menu trước
+        closeMenu();
+
+        // Đợi menu đóng hoàn tất (500ms là thời gian transition của menu)
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
+        // Sau đó mới scroll
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: "instant",
+        });
+      } else {
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: "smooth",
+        });
+      }
+
       navLinks.forEach((n) => n.classList.remove("active"));
       link.classList.add("active");
     });
@@ -83,31 +105,38 @@ function setupNavigation() {
 }
 
 function setupNavigationFixed() {
-  let lastScrollY = window.scrollY;
   const navbar = document.getElementById("smart-navbar");
+  if (!navbar) return;
 
+  // Set initial state
+  updateNavbarState();
+
+  // Add scroll event listener
   window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
+    updateNavbarState();
+  });
 
-    if (currentScrollY <= 0) {
-      // Trở lại đầu trang  như thường
-      navbar.classList.remove("fixed", "top-0", "translate-y-0", "shadow-md");
-      navbar.classList.add("relative");
-    } else if (currentScrollY > lastScrollY) {
-      // Cuộn xuống  giữ cố định
+  function updateNavbarState() {
+    if (window.scrollY > 0) {
       navbar.classList.remove("relative");
       navbar.classList.add(
         "fixed",
         "top-0",
-        // "inset-x-0",
         "left-0",
         "right-0",
         "w-full",
-        "translate-y-0",
         "shadow-md"
       );
+    } else {
+      navbar.classList.remove(
+        "fixed",
+        "top-0",
+        "left-0",
+        "right-0",
+        "w-full",
+        "shadow-md"
+      );
+      navbar.classList.add("relative");
     }
-
-    lastScrollY = currentScrollY;
-  });
+  }
 }

@@ -1,48 +1,18 @@
-<nav
-  id="smart-navbar"
-  class="shadow mb-0.5 bg-green-50 relative z-[60] transition-all duration-300"
-  aria-label="Main navigation"
-  data-aos="fade-up"
->
-  <div
-    class="container flex md:hidden items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
+<section>
+  <nav
+    id="smart-navbar"
+    class="shadow bg-green-50 relative z-[60] transition-all duration-300"
+    aria-label="Main navigation"
+    data-aos="fade-up"
   >
-    <!-- Mobile menu button -->
-    <button
-      id="menu-btn"
-      class="md:hidden text-gray-800 focus:outline-none"
-      aria-label="Mở menu điều hướng"
+    <div
+      class="container flex md:hidden items-center md:justify-around mx-auto px-4 py-3 md:px-1 md:py-4"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
-
-    <!-- Main menu -->
-  </div>
-  <div class="">
-    <ul
-      id="menu"
-      role="navigation"
-      aria-label="Menu chính"
-      class="fixed justify-center inset-0 z-[70] w-screen h-screen bg-green-50 shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out will-change-transform pt-16 px-6 box-border overflow-y-auto overscroll-contain touch-pan-y md:static md:z-auto md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:p-2 md:transform-none md:translate-x-0 md:w-auto md:h-auto md:bg-transparent"
-    >
-      <!-- Nút đóng menu mobile -->
+      <!-- Mobile menu button -->
       <button
-        id="close-menu"
-        class="absolute top-4 right-4 text-gray-800 hover:text-red-500 transition duration-200 md:hidden"
-        aria-label="Đóng menu"
+        id="menu-btn"
+        class="md:hidden text-gray-800 focus:outline-none"
+        aria-label="Mở menu điều hướng"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,55 +25,102 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
+            d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
       </button>
 
-      <!-- Các mục menu -->
-      <li>
-        <a
-          href="#banner"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
+      <!-- Main menu -->
+    </div>
+    <div class="">
+      <ul
+        id="menu"
+        role="navigation"
+        aria-label="Menu chính"
+        class="fixed justify-center inset-0 z-[70] w-screen h-screen bg-green-50 shadow-lg transform translate-x-full transition-transform duration-500 ease-in-out will-change-transform pt-16 px-6 box-border overflow-y-auto overscroll-contain touch-pan-y md:static md:z-auto md:shadow-none md:flex md:items-center md:space-x-4 xl:space-x-6 md:p-2 md:transform-none md:translate-x-0 md:w-auto md:h-auto md:bg-transparent"
+      >
+        <!-- Nút đóng menu mobile -->
+        <button
+          id="close-menu"
+          class="absolute top-4 right-4 text-gray-800 hover:text-red-500 transition duration-200 md:hidden"
+          aria-label="Đóng menu"
         >
-          Trang chủ
-        </a>
-      </li>
-      <li>
-        <a
-          href="#about"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
-        >
-          Giới thiệu
-        </a>
-      </li>
-      <li>
-        <a
-          href="#service"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
-        >
-          Dịch vụ
-        </a>
-      </li>
-      <li>
-        <a
-          href="#card-doctor"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
-        >
-          Đội ngũ/Nhân sự
-        </a>
-      </li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-      <li>
-        <a
-          href="#footer"
-          class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-green-600 hover:text-green-900 transition-colors duration-1000"
-        >
-          Liên hệ
-        </a>
-      </li>
-    </ul>
-    <!-- <div class="flex px-4 pb-3 z-[100]">
+        <!-- Các mục menu -->
+        <li>
+          <a
+            href="#banner"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Trang chủ
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Giới thiệu
+          </a>
+        </li>
+        <li>
+          <a
+            href="#service"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Dịch vụ
+          </a>
+        </li>
+        <li>
+          <a
+            href="#card-doctor"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Đội ngũ/Nhân sự
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#footer"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Liên hệ
+          </a>
+        </li>
+        <li>
+          <a
+            href="#footer"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Liên hệ
+          </a>
+        </li>
+        <li>
+          <a
+            href="#footer"
+            class="nav-link block text-xl md:text-sm xl:text-xl font-medium px-4 py-3 md:px-3 md:py-2 text-black hover:text-white hover:bg-green-500 hover:rounded-full duration-1000"
+          >
+            Liên hệ
+          </a>
+        </li>
+      </ul>
+      <!-- <div class="flex px-4 pb-3 z-[100]">
       <input
         type="text"
         placeholder="Tìm kiếm…"
@@ -127,11 +144,12 @@
         </svg>
       </button>
     </div> -->
-  </div>
-</nav>
+    </div>
+  </nav>
 
-<!-- Overlay for mobile menu -->
-<div
-  id="overlay"
-  class="fixed inset-0 bg-opacity-50 z-[65] hidden md:hidden"
-></div>
+  <!-- Overlay for mobile menu -->
+  <div
+    id="overlay"
+    class="fixed inset-0 bg-opacity-50 z-[65] hidden md:hidden"
+  ></div>
+</section>

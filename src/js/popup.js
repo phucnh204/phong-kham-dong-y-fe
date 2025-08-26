@@ -10,9 +10,8 @@ export async function mountPopup() {
     // Hiện popup - xóa class hidden
     popup.classList.remove("hidden");
 
-    // Setup các event listeners để đóng popup
     const closeBtn = document.getElementById("close-popup-2");
-    const overlay = document.getElementById("popup-2-overlay"); // Sửa ID này
+    const overlay = document.getElementById("popup-2-overlay");
 
     function closePopup() {
       popup.classList.add("hidden");

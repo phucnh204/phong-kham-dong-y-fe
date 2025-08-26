@@ -9,8 +9,9 @@ import { mountFooter } from "./src/js/footer.js";
 import { mountPopup } from "./src/js/popup.js";
 import { mountHeader as _mountHeader } from "./src/js/header.js";
 
-(async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   try {
+    await mountPopup();
     await _mountHeader();
     await mountNavbar();
     await mountBanner();
@@ -20,8 +21,7 @@ import { mountHeader as _mountHeader } from "./src/js/header.js";
     await mountCardDoctor();
     await mountBooking();
     await mountFooter();
-    await mountPopup();
   } catch (e) {
-    console.error("Lopoix load trang :", e);
+    console.error("Lỗi load trang:", e);
   }
-})();
+});

@@ -28,6 +28,27 @@
     />
 
     <style>
+      ::-webkit-scrollbar {
+        width: 6px; /* thanh mỏng  */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #e0f7e0;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4caf50;
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #388e3c;
+      }
+
+      /* For Firefox */
+      scrollbar-width: thin;
+      scrollbar-color: #4caf50 #e0f7e0;
+
       html {
         scroll-behavior: smooth;
       }

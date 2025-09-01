@@ -1,4 +1,4 @@
-import { mountHTML } from "./../../utils/dom.js";
+import { mountHTML } from "../utils/dom.js";
 
 export async function mountPopup() {
   await mountHTML("popup-2", "src/components/popup-2.html");

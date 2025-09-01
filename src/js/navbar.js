@@ -1,5 +1,5 @@
 // components/navbar.js
-import { mountHTML } from "./../../utils/dom.js";
+import { mountHTML } from "../utils/dom.js";
 
 export async function mountNavbar() {
   await mountHTML("navbar", "src/components/navbar.html", () => {

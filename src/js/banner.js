@@ -23,7 +23,7 @@
 //   });
 // }
 
-import { mountHTML } from "./../../utils/dom.js";
+import { mountHTML } from "../utils/dom.js";
 
 export async function mountBanner() {
   await mountHTML("banner", "src/components/banner.html", () => {

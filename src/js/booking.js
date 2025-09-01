@@ -2,7 +2,7 @@ import {
   mountHTML,
   setTodayMinForDateInputs,
   loadInlineScripts,
-} from "./../../utils/dom.js";
+} from "../utils/dom.js";
 
 const notyf = new Notyf();
 //  CẤU HÌNH EMAILJS
@@ -141,8 +141,22 @@ function setupDatLichPopup() {
         message: data.message,
       };
 
+      // Gửi Email
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload);
 
+      // 2. Gửi API lưu vào CSDL
+      await fetch("http://localhost:8080/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: payload.from_name,
+          phone: payload.phone,
+          email: payload.email,
+          appointmentDate: payload.appointment_date,
+          appointmentTime: payload.appointment_time,
+          message: payload.message,
+        }),
+      });
       notyf.success(
         "Cảm ơn bạn đã tinm tưởng! Chúng tôi đã nhận được thông tin và sẽ liên hệ sớm nhất."
       );

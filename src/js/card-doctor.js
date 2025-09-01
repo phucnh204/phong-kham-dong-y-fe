@@ -1,38 +1,53 @@
-import { mountHTML } from "./../../utils/dom.js";
+import { mountHTML } from "../utils/dom.js";
 
-// Hàm tải thông tin bác sĩ
 export async function mountCardDoctor() {
   await mountHTML("card-doctor", "src/components/card-doctor.html");
 
-  // Hiển thị các bác sĩ ẩn khi nhấn "Xem Thêm"
-  document
-    .getElementById("show-more-btn-2")
-    .addEventListener("click", function () {
-      const hiddenDoctors = document.querySelectorAll(".doctor-item.hidden");
-      hiddenDoctors.forEach((doctor) => {
-        doctor.classList.remove("hidden"); // Loại bỏ lớp 'hidden' để hiển thị
-      });
+  const grid = document.getElementById("doctor-grid");
+  if (!grid) return;
 
-      // Ẩn nút "Xem Thêm"
-      document.getElementById("show-more-btn-2").style.display = "none";
+  try {
+    const res = await fetch("http://localhost:8080/doctors"); // API thật
+    if (!res.ok) throw new Error("Lỗi khi gọi API doctor: " + res.status);
+    const doctors = await res.json();
 
-      // Hiển thị nút "Ẩn Bớt"
-      document.getElementById("hide-btn-2").style.display = "inline-block";
+    // Làm sạch trước
+    grid.innerHTML = "";
+
+    doctors.forEach((doctor, index) => {
+      const div = document.createElement("div");
+      div.className =
+        "doctor-item text-center p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300" +
+        (index >= 4 ? " hidden" : "");
+
+      div.innerHTML = `
+        <img src="${doctor.imageUrl}" alt="${doctor.name}" class="w-auto h-36 mx-auto object-cover mb-4" />
+        <h3 class="mt-2 font-bold text-xl text-green-700">${doctor.name}</h3>
+        <p class="text-gray-600">${doctor.specialization}</p>
+        <p class="text-gray-500 text-sm mt-2 p-2">${doctor.description}</p>
+      `;
+
+      grid.appendChild(div);
     });
+  } catch (e) {
+    console.error("Không load được dữ liệu bác sĩ:", e);
+  }
 
-  // Ẩn các bác sĩ khi nhấn "Ẩn Bớt"
-  document.getElementById("hide-btn-2").addEventListener("click", function () {
-    const allDoctors = document.querySelectorAll(".doctor-item");
-    allDoctors.forEach((doctor, index) => {
-      if (index >= 4) {
-        doctor.classList.add("hidden"); // Thêm lớp 'hidden' để ẩn các bác sĩ từ bác sĩ thứ 5
-      }
+  // Xử lý nút "Xem thêm"
+  document.getElementById("show-more-btn-2").addEventListener("click", () => {
+    document.querySelectorAll(".doctor-item.hidden").forEach((el) => {
+      el.classList.remove("hidden");
     });
+    document.getElementById("show-more-btn-2").classList.add("hidden");
+    document.getElementById("hide-btn-2").classList.remove("hidden");
+  });
 
-    // Hiển thị lại nút "Xem Thêm"
-    document.getElementById("show-more-btn-2").style.display = "inline-block";
-
-    // Ẩn nút "Ẩn Bớt"
-    document.getElementById("hide-btn-2").style.display = "none";
+  document.getElementById("hide-btn-2").addEventListener("click", () => {
+    document.querySelectorAll(".doctor-item").forEach((el, index) => {
+      if (index >= 4) el.classList.add("hidden");
+    });
+    document.getElementById("show-more-btn-2").classList.remove("hidden");
+    document.getElementById("hide-btn-2").classList.add("hidden");
   });
 }
+

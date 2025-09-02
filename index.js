@@ -23,9 +23,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     await mountHTML("dat-lich", "src/components/dat-lich.html");
     await mountBooking();
 
+    await mountHTML("navbar", "src/components/navbar.html");
+    await mountNavbar();
+
     await mountPopup();
     await _mountHeader();
-    await mountNavbar();
+
     await mountBanner();
     await mountWhyChoose();
     await mountAbout();

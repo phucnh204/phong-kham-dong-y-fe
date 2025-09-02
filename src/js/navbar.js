@@ -86,7 +86,14 @@ function setupNavigation() {
   });
 
   window.addEventListener("scroll", () => {
-    const sections = ["banner", "about", "service", "card-doctor"];
+    const sections = [
+      "header",
+      "banner",
+      "about",
+      "service",
+      "card-doctor",
+      "footer",
+    ];
     let current = "";
     sections.forEach((id) => {
       const s = document.getElementById(id);
